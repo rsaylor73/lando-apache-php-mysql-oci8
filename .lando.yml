@@ -1,0 +1,16 @@
+name: oracle
+recipe: lamp
+config:
+  php: '7.2'
+  via: apache:2.4
+  webroot: /public
+  database: mysql:5.7
+  cache: none
+  xdebug: false
+  config:
+    database: mysql
+    php: '7.2'
+services:
+  appserver:
+    build_as_root:
+      - /app/oci8.sh
